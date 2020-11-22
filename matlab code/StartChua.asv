@@ -1,0 +1,12 @@
+[t,y] = ode45(@chua,[0 100],[0.7 0 0]);
+plot3(y(:,1),y(:,2),y(:,3))
+grid
+k1=0.1
+k2=0.1
+k3=0.1
+xref=1
+yref=1
+zref=1
+xdot = (1/C1)*(G*(y-x)-g)+(1/C1)*((C2/C1)*(G*(x-y)+g)+G*k1*(xref-x));
+ydot = (1/C2)*(G*(x-y)+z)+(1/(mm1*C2))*(y-x-(z/G)+k2*(yref-y));
+zdot  = -(1/L)*(y+R0*z)+(1/G*mm1)*((C2/L)*(y/G));
